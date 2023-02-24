@@ -34,7 +34,8 @@ function App() {
     setTodoInput(evt.target.value);
   }
 
-  const addTddoHandler = () => {
+  const addTddoHandler = (evt) => {
+    // evt.preventdefault();
     if (todoInput.trim() !== "") {
       // == ,=== ?
       const todo = {
@@ -46,6 +47,14 @@ function App() {
 
       setTodoInput(""); // clearing input
     }
+  };
+
+  const deleteTodos = (id) => {
+    const list = todoList.filter((item) => {
+      return item.id != id;
+    });
+
+    setTodoList(list);
   };
 
   return (
@@ -65,9 +74,11 @@ function App() {
         </form>
       </div>
       {todoList.length > 0 ? (
-        <Todo todos={todoList} />
+        <Todo todos={todoList} removeElemt={deleteTodos} />
       ) : (
-        <p>No TODO added yet please start adding now</p>
+        <p style={{ textAlign: "center", width: "50%" }}>
+          No TODO added yet please start adding now
+        </p>
       )}
     </div>
   );
