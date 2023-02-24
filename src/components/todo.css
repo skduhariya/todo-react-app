@@ -1,0 +1,20 @@
+.todo {
+  list-style: none;
+}
+.todo li {
+  display: block;
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: #ccc;
+  width: 50%;
+  margin: 6px 0;
+  float: left;
+}
+.todo li button {
+  float: right;
+  padding: 4px;
+  background-color: #cb3232;
+  border: 1px solid #cb3232;
+  cursor: pointer;
+  color: #fff;
+}
